@@ -56,7 +56,7 @@ def register():
             password_var=request.form["password_reg"]
             user=users(email_name,password_var,random_code)
             img = pyqrcode.create(pyotp.totp.TOTP(random_code).provisioning_uri(name=email_name, issuer_name='Secure App'))
-            img.png('/tmp/MyQRCode.png',scale=8)
+            img.png('/temp/MyQRCode.png',scale=8)
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('qrcode'))
