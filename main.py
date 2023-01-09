@@ -36,7 +36,7 @@ def login():
         passw = request.form["passw"]
         token = request.form["token"]
         login = users.query.filter_by(email=uname, password=passw).first()
-        print("printing:",login.keys)
+        print("printing:",login)
         if login is not None:
             if token==(pyotp.TOTP(login.keys)).now():
                 # return redirect(url_for('report'))
