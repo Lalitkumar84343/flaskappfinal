@@ -69,7 +69,7 @@ def qrcode():
     return render_template('qrcode.html',user_image=pic1)
 
 if __name__ =="__main__":
-    #db.create_all()
+    #db.create_al()
     with app.app_context():
         db.create_all()
     app.run(debug=True)
